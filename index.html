@@ -802,7 +802,14 @@
             }
 
             
-
+         // TikTok Live Views 15 Min
+        const tiktokLiveViews15MinSelect = document.getElementById('tiktok-live-views-15min');
+        if (tiktokLiveViews15MinSelect) {
+            tiktokLiveViews15MinSelect.addEventListener('change', () => {
+                updatePrice('tiktok-live-views-15min', 'tiktok-live-views-15min-price', tiktokLiveViews15MinPrices);
+            });
+        }
+        
              // TikTok Live Views 30 Min
         const tiktokLiveViews30MinSelect = document.getElementById('tiktok-live-views-30min');
         if (tiktokLiveViews30MinSelect) {
