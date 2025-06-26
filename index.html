@@ -602,6 +602,115 @@
             1000: 12.00
         };
 
+         const tiktokLiveViews15MinPrices = {
+        100: 0.70,
+        300: 2.10,
+        450: 3.15,
+        600: 4.20,
+        750: 5.25,
+        1000: 7.00
+    };
+
+    const tiktokLiveViews30MinPrices = {
+        100: 1.50,
+        300: 4.50,
+        450: 6.75,
+        600: 9.00,
+        750: 11.25,
+        1000: 15.00
+    };
+
+    const tiktokBRLikesViewsPrices = {
+        100: 0.25,
+        300: 0.75,
+        450: 1.12, // Aproximado para R$1,12
+        600: 1.50,
+        750: 1.87, // Aproximado para R$1,87
+        1000: 2.50
+    };
+
+    const tiktokGlobalFollowerPrices = {
+        100: 1.80,
+        300: 5.40,
+        450: 8.10,
+        600: 10.80,
+        750: 13.50,
+        1000: 18.00
+    };
+
+    const tiktokVideoLikesPrices = {
+        100: 0.075, // Ajustado para 0.075, que é R$0,075
+        300: 0.225, // Ajustado para 0.225
+        450: 0.3375, // Ajustado para 0.3375
+        600: 0.45,
+        750: 0.5625, // Ajustado para 0.5625
+        1000: 0.75
+    };
+
+    const tiktokLiveFollowerPrices = {
+        100: 0.70,
+        300: 2.10,
+        450: 3.15,
+        600: 4.20,
+        750: 5.25,
+        1000: 7.00
+    };
+
+    const tiktokSharesPrices = {
+        100: 2.00,
+        300: 6.00,
+        450: 9.00,
+        600: 12.00,
+        750: 15.00,
+        1000: 20.00
+    };
+
+    const tiktokVideoViewsPrices = {
+        100: 0.15,
+        300: 0.45,
+        450: 0.675, // Ajustado para 0.675
+        600: 0.90,
+        750: 1.125, // Ajustado para 1.125
+        1000: 1.50
+    };
+
+    // NOVOS OBJETOS DE PREÇOS PARA YOUTUBE
+    const youtubeSubscribers30DaysPrices = {
+        100: 5.60,
+        300: 16.80,
+        450: 25.20,
+        600: 33.60,
+        750: 42.00,
+        1000: 56.00
+    };
+
+    const youtubeVideoViewsPrices = {
+        100: 1.50,
+        300: 4.50,
+        450: 6.75,
+        600: 9.00,
+        750: 11.25,
+        1000: 15.00
+    };
+
+    const youtubeVideoLikesPrices = {
+        100: 1.60,
+        300: 4.80,
+        450: 7.20,
+        600: 9.60,
+        750: 12.00,
+        1000: 16.00
+    };
+
+    const youtubeSubscribersNoReplacementPrices = {
+        100: 0.70,
+        300: 2.10,
+        450: 3.15,
+        600: 4.20,
+        750: 5.25,
+        1000: 7.00
+    };
+
         /**
          * Atualiza o preço exibido com base na seleção do dropdown.
          * @param {string} selectId O ID do elemento select.
@@ -653,12 +762,120 @@
                 });
             }
 
-            // Define os preços iniciais ao carregar a página
-            updatePrice('instagram-followers', 'instagram-followers-price', instagramFollowerPrices);
-            updatePrice('instagram-likes', 'instagram-likes-price', instagramLikePrices);
-            updatePrice('facebook-followers', 'facebook-followers-price', facebookFollowerPrices);
-            updatePrice('facebook-likes', 'facebook-likes-price', facebookLikePrices);
-        });
+            
+
+             // TikTok Live Views 30 Min
+        const tiktokLiveViews30MinSelect = document.getElementById('tiktok-live-views-30min');
+        if (tiktokLiveViews30MinSelect) {
+            tiktokLiveViews30MinSelect.addEventListener('change', () => {
+                updatePrice('tiktok-live-views-30min', 'tiktok-live-views-30min-price', tiktokLiveViews30MinPrices);
+            });
+        }
+
+        // TikTok Curtidas BR + Views Vídeos
+        const tiktokBRLikesViewsSelect = document.getElementById('tiktok-br-likes-views');
+        if (tiktokBRLikesViewsSelect) {
+            tiktokBRLikesViewsSelect.addEventListener('change', () => {
+                updatePrice('tiktok-br-likes-views', 'tiktok-br-likes-views-price', tiktokBRLikesViewsPrices);
+            });
+        }
+
+        // TikTok Seguidores Mundiais (Alta Qual.)
+        const tiktokGlobalFollowersSelect = document.getElementById('tiktok-global-followers');
+        if (tiktokGlobalFollowersSelect) {
+            tiktokGlobalFollowersSelect.addEventListener('change', () => {
+                updatePrice('tiktok-global-followers', 'tiktok-global-followers-price', tiktokGlobalFollowerPrices);
+            });
+        }
+
+        // TikTok Curtidas em Vídeos
+        const tiktokVideoLikesSelect = document.getElementById('tiktok-video-likes');
+        if (tiktokVideoLikesSelect) {
+            tiktokVideoLikesSelect.addEventListener('change', () => {
+                updatePrice('tiktok-video-likes', 'tiktok-video-likes-price', tiktokVideoLikesPrices);
+            });
+        }
+
+        // TikTok Seguidores via Live
+        const tiktokLiveFollowersSelect = document.getElementById('tiktok-live-followers');
+        if (tiktokLiveFollowersSelect) {
+            tiktokLiveFollowersSelect.addEventListener('change', () => {
+                updatePrice('tiktok-live-followers', 'tiktok-live-followers-price', tiktokLiveFollowerPrices);
+            });
+        }
+
+        // TikTok Visualizações em Vídeos
+        const tiktokVideoViewsSelect = document.getElementById('tiktok-video-views');
+        if (tiktokVideoViewsSelect) {
+            tiktokVideoViewsSelect.addEventListener('change', () => {
+                updatePrice('tiktok-video-views', 'tiktok-video-views-price', tiktokVideoViewsPrices);
+            });
+        }
+
+        // TikTok Compartilhamentos
+        const tiktokSharesSelect = document.getElementById('tiktok-shares');
+        if (tiktokSharesSelect) {
+            tiktokSharesSelect.addEventListener('change', () => {
+                updatePrice('tiktok-shares', 'tiktok-shares-price', tiktokSharesPrices);
+            });
+        }
+
+        // YouTube Inscritos c/ Reposição (30 dias)
+        const youtubeSubscribers30DaysSelect = document.getElementById('youtube-subscribers-30days');
+        if (youtubeSubscribers30DaysSelect) {
+            youtubeSubscribers30DaysSelect.addEventListener('change', () => {
+                updatePrice('youtube-subscribers-30days', 'youtube-subscribers-30days-price', youtubeSubscribers30DaysPrices);
+            });
+        }
+
+        // YouTube Views para Vídeos
+        const youtubeVideoViewsSelect = document.getElementById('youtube-video-views');
+        if (youtubeVideoViewsSelect) {
+            youtubeVideoViewsSelect.addEventListener('change', () => {
+                updatePrice('youtube-video-views', 'youtube-video-views-price', youtubeVideoViewsPrices);
+            });
+        }
+
+        // YouTube Likes em Vídeos
+        const youtubeVideoLikesSelect = document.getElementById('youtube-video-likes');
+        if (youtubeVideoLikesSelect) {
+            youtubeVideoLikesSelect.addEventListener('change', () => {
+                updatePrice('youtube-video-likes', 'youtube-video-likes-price', youtubeVideoLikesPrices);
+            });
+        }
+
+        // YouTube Inscritos Sem Reposição
+        const youtubeSubscribersNoReplacementSelect = document.getElementById('youtube-subscribers-no-replacement');
+        if (youtubeSubscribersNoReplacementSelect) {
+            youtubeSubscribersNoReplacementSelect.addEventListener('change', () => {
+                updatePrice('youtube-subscribers-no-replacement', 'youtube-subscribers-no-replacement-price', youtubeSubscribersNoReplacementPrices);
+            });
+        }
+
+
+        // Define os preços iniciais ao carregar a página
+        updatePrice('instagram-followers', 'instagram-followers-price', instagramFollowerPrices);
+        updatePrice('instagram-likes', 'instagram-likes-price', instagramLikePrices);
+        updatePrice('facebook-followers', 'facebook-followers-price', facebookFollowerPrices);
+        updatePrice('facebook-likes', 'facebook-likes-price', facebookLikePrices);
+
+        // Define os preços iniciais para TikTok
+        updatePrice('tiktok-live-views-15min', 'tiktok-live-views-15min-price', tiktokLiveViews15MinPrices);
+        updatePrice('tiktok-live-views-30min', 'tiktok-live-views-30min-price', tiktokLiveViews30MinPrices);
+        updatePrice('tiktok-br-likes-views', 'tiktok-br-likes-views-price', tiktokBRLikesViewsPrices);
+        updatePrice('tiktok-global-followers', 'tiktok-global-followers-price', tiktokGlobalFollowerPrices);
+        updatePrice('tiktok-video-likes', 'tiktok-video-likes-price', tiktokVideoLikesPrices);
+        updatePrice('tiktok-live-followers', 'tiktok-live-followers-price', tiktokLiveFollowerPrices);
+        updatePrice('tiktok-video-views', 'tiktok-video-views-price', tiktokVideoViewsPrices);
+        updatePrice('tiktok-shares', 'tiktok-shares-price', tiktokSharesPrices);
+
+        // Define os preços iniciais para YouTube
+        updatePrice('youtube-subscribers-30days', 'youtube-subscribers-30days-price', youtubeSubscribers30DaysPrices);
+        updatePrice('youtube-video-views', 'youtube-video-views-price', youtubeVideoViewsPrices);
+        updatePrice('youtube-video-likes', 'youtube-video-likes-price', youtubeVideoLikesPrices);
+        updatePrice('youtube-subscribers-no-replacement', 'youtube-subscribers-no-replacement-price', youtubeSubscribersNoReplacementPrices);
+    });
+
     </script>
 </body>
 </html>
